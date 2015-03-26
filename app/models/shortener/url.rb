@@ -1,24 +1,29 @@
 module Shortener
   class Url < ActiveRecord::Base
-    before_create :generate_key
-
     validates :key, :long_url, presence: true
 
-    def self.generate!(long_url, retries = 0)
+    def self.shorten(long_url, retries = 0)
       url = self.new
       url.long_url = long_url
-      url.key      = SecureRandom.hex(5)
+      url.key      = [*'A'..'Z', *'a'..'z', *0..9].sample(6).join
       url.save!
-      "http://snpd.co/#{url.key}"
+
+      if Rails.env.production?
+        "http://snpd.co/#{url.key}"
+      elsif Rails.env.staging?
+        "http://s.snpd.co/#{url.key}"
+      elsif Rails.env.development?
+        "http://d.snpd.co/#{url.key}"
+      else
+        "http://t.snpd.co/#{url.key}"
+      end
+
     rescue ActiveRecord::RecordNotUnique => e
       if retries < 5
-        self.generate!(long_url, retries + 1)
+        self.shorten(long_url, retries + 1)
       else
         raise e
       end
-    end
-
-    def generate_key
     end
   end
 end
