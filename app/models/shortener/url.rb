@@ -9,9 +9,9 @@ module Shortener
       url.save!
 
       if Rails.env.production?
-        "http://p.snapdocs.com/#{url.key}"
+        "http://snpd.co/#{url.key}"
       elsif Rails.env.staging?
-        "http://s.snapdocs.com/#{url.key}"
+        "http://s.snpd.co/#{url.key}"
       elsif Rails.env.development?
         "http://d.snpd.co/#{url.key}"
       else
