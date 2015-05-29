@@ -7,11 +7,11 @@ require "shortener/version"
 Gem::Specification.new do |s|
   s.name        = "shortener"
   s.version     = Shortener::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Shortener."
-  s.description = "TODO: Description of Shortener."
+  s.authors     = ["Pavel Pachkovsky"]
+  s.email       = ["sean@snapdocs.com"]
+  s.homepage    = "https://www.github.com/SnapDocs/shortener"
+  s.summary     = "shortens stuff"
+  s.description = "shortening shortly"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
 
