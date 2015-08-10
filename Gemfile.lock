@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    shortener (0.0.1)
+    shortener (0.0.2)
       rails (~> 3.2.21)
 
 GEM
@@ -85,7 +85,7 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    tzinfo (0.3.42)
+    tzinfo (0.3.44)
 
 PLATFORMS
   ruby
