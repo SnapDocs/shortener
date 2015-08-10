@@ -2,6 +2,8 @@ module Shortener
   class Url < ActiveRecord::Base
     validates :key, :long_url, presence: true
 
+    scope :fetch_by_key, -> (key) { where(key: key).where('created_at >= ?', 14.days.ago) }
+
     def self.shorten(long_url, retries = 0)
       url = self.new
       url.long_url = long_url
