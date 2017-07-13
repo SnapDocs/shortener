@@ -14,7 +14,7 @@ module Shortener
       if Rails.env.production?
         'https://app.snapdocs.com/link_expired'
       elsif Rails.env.staging?
-        'https://staging.snapdocs.com/link_expired'
+        'https://app-sales.snapdocs.com/link_expired'
       elsif Rails.env.development? || Rails.env.test?
         'http://localhost:3000/link_expired'
       else
