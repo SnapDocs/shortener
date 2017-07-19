@@ -1,3 +1,5 @@
+*** This gem is deprecated and should not be used going forward ***
+
 = Shortener
 
 This project rocks and uses MIT-LICENSE.
