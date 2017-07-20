@@ -13,7 +13,7 @@ module Shortener
       if Rails.env.production?
         "http://snpd.co/#{url.key}"
       elsif Rails.env.staging?
-        "http://s.snpd.co/#{url.key}"
+        "http://sales.snpd.co/#{url.key}"
       elsif Rails.env.development?
         "http://d.snpd.co/#{url.key}"
       else
